@@ -1,0 +1,137 @@
+﻿html
+{
+ height:100%;
+}
+body
+{   
+    color:white;
+     background: url("../img/tlo.png") no-repeat center center fixed;
+     background-size:cover;
+}
+#pole
+{
+    height: 30px;
+    margin-right: 20px;
+}
+#ok
+{   
+    font-family: 'arial black';
+    font-size: 1em;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+}
+#sterowanie
+{   
+    text-align:center;
+    margin-left:auto;  
+    margin-right:auto;
+    margin-top:30px;
+}
+#area
+{   
+    background: url("../img/area.png") no-repeat center center fixed;
+     background-size:cover; 
+    margin-left:auto;
+    margin-right:auto;
+    height:300px;
+    width:300px;
+    border:thin;
+    border-style:solid;
+    border-color:#a5a8c3;
+    background-color:#f7f7f7;   
+}
+#up
+{   
+    margin-bottom:5px;
+}
+#up:focus
+{
+    outline:none;
+
+}
+#left
+{   
+    margin-right:25px;
+}
+#left:focus
+{
+    outline:none;
+
+}
+#right
+{   
+    margin-left: 25px;
+}
+#right:focus
+{
+    outline:none;
+
+}
+#down 
+{   
+    margin-top: 5px;
+}
+#down:focus
+{
+    outline:none;
+
+}
+#kwadrat
+{
+    width:30px;
+    height:30px;
+    
+    position:absolute;
+}
+#artefakt
+{
+    width:30px;
+    height:30px;
+    position:absolute;
+}
+#punkty
+{   
+   float:left;         
+}
+#czas_caly
+{
+    float:right;  
+    font-weight:700;
+}
+#dodatkowy_czas
+{   
+    float:left;
+    margin-right:10px;
+}
+#czas
+{   
+    float:right;
+}
+#punkty_czas
+{
+  font-family: Arial Black;
+  font-weight:700;  
+  width:100%;
+  height:30px;
+}
+#jeszcze_raz_div
+{
+    height:50px;
+    width:150px;
+}
+.strzalka
+{
+    width:30px;
+    height:30px;
+}
+div img
+{
+    width:100%;
+    height:100%;
+}
+

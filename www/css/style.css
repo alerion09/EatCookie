@@ -1,19 +1,21 @@
 ﻿html
 {
- height:100%;
+    height:100%;
+    padding: 0;
+    margin: 0;
 }
 body
 {   
     color:white;
-     background: url("../img/tlo.png") no-repeat center center fixed;
-     background-size:cover;
+    background: url("../img/tlo.png") no-repeat center center fixed;
+    background-size:cover;
 }
-#pole
+#nick_imput
 {
     height: 30px;
     margin-right: 20px;
 }
-#ok
+#ok_button
 {   
     font-family: 'arial black';
     font-size: 1em;
@@ -25,7 +27,7 @@ body
     width: 40px;
     height: 40px;
 }
-#sterowanie
+#control_buttons
 {   
     text-align:center;
     margin-left:auto;  
@@ -35,7 +37,7 @@ body
 #area
 {   
     background: url("../img/area.png") no-repeat center center fixed;
-     background-size:cover; 
+    background-size:cover; 
     margin-left:auto;
     margin-right:auto;
     height:300px;
@@ -52,7 +54,6 @@ body
 #up:focus
 {
     outline:none;
-
 }
 #left
 {   
@@ -61,7 +62,6 @@ body
 #left:focus
 {
     outline:none;
-
 }
 #right
 {   
@@ -70,7 +70,6 @@ body
 #right:focus
 {
     outline:none;
-
 }
 #down 
 {   
@@ -79,52 +78,45 @@ body
 #down:focus
 {
     outline:none;
-
 }
-#kwadrat
-{
-    width:30px;
-    height:30px;
-    
-    position:absolute;
-}
-#artefakt
+#square
 {
     width:30px;
     height:30px;
     position:absolute;
 }
-#punkty
+#artifact
+{
+    width:30px;
+    height:30px;
+    position:absolute;
+}
+#points
 {   
    float:left;         
 }
-#czas_caly
+#time_div
 {
     float:right;  
     font-weight:700;
 }
-#dodatkowy_czas
+#extra_time
 {   
     float:left;
     margin-right:10px;
 }
-#czas
+#time
 {   
     float:right;
 }
-#punkty_czas
+#points_time_div
 {
   font-family: Arial Black;
   font-weight:700;  
   width:100%;
   height:30px;
 }
-#jeszcze_raz_div
-{
-    height:50px;
-    width:150px;
-}
-.strzalka
+.arrow
 {
     width:30px;
     height:30px;

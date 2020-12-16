@@ -1,14 +1,120 @@
 ﻿html
 {
     height:100%;
+    width: 100%;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
 }
 body
 {   
-    color:white;
-    background: url("../img/tlo.png") no-repeat center center fixed;
-    background-size:cover;
+    font-size: 1.6rem;
+    height:100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color:rgb(0, 0, 0);
+    /* background: url("../img/tlo.png") no-repeat center center fixed; */
+    /* background-size:cover; */
+}
+#container
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#points_time_div
+{   
+    font-size: 2rem;
+    height: 10%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#time_div
+{   
+    display: flex;
+    flex-direction: row;
+}
+#time
+{
+    padding-left: 10px;
+}
+#stage
+{   
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+#area
+{   
+    background: url("../img/area.png") no-repeat center center fixed;
+    background-size:cover; 
+    border:thin;
+    width: 400px;
+    height: 400px;
+    border-style:solid;
+    border-color:#a5a8c3;
+    background-color:#f7f7f7;   
+}
+#control_buttons
+{
+    margin-top: 3%;
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+#up
+{ 
+    margin-bottom: 20px;
+}
+#left
+{   
+    padding-right: 15px;
+}
+#right
+{   
+    padding-left: 15px;
+}
+#down 
+{   
+    margin-top: 20px;
+}
+#square
+{
+    width:30px;
+    height:30px;
+    position:absolute;
+}
+#artifact
+{
+    width:30px;
+    height:30px;
+    position:absolute;
+}
+.arrow
+{
+    width:30px;
+    height:30px;
+}
+.arrow:focus
+{
+    outline:none;
+}
+div img
+{
+    width:100%;
+    height:100%;
 }
 #nick_imput
 {
@@ -27,103 +133,3 @@ body
     width: 40px;
     height: 40px;
 }
-#control_buttons
-{   
-    text-align:center;
-    margin-left:auto;  
-    margin-right:auto;
-    margin-top:30px;
-}
-#area
-{   
-    background: url("../img/area.png") no-repeat center center fixed;
-    background-size:cover; 
-    margin-left:auto;
-    margin-right:auto;
-    height:300px;
-    width:300px;
-    border:thin;
-    border-style:solid;
-    border-color:#a5a8c3;
-    background-color:#f7f7f7;   
-}
-#up
-{   
-    margin-bottom:5px;
-}
-#up:focus
-{
-    outline:none;
-}
-#left
-{   
-    margin-right:25px;
-}
-#left:focus
-{
-    outline:none;
-}
-#right
-{   
-    margin-left: 25px;
-}
-#right:focus
-{
-    outline:none;
-}
-#down 
-{   
-    margin-top: 5px;
-}
-#down:focus
-{
-    outline:none;
-}
-#square
-{
-    width:30px;
-    height:30px;
-    position:absolute;
-}
-#artifact
-{
-    width:30px;
-    height:30px;
-    position:absolute;
-}
-#points
-{   
-   float:left;         
-}
-#time_div
-{
-    float:right;  
-    font-weight:700;
-}
-#extra_time
-{   
-    float:left;
-    margin-right:10px;
-}
-#time
-{   
-    float:right;
-}
-#points_time_div
-{
-  font-family: Arial Black;
-  font-weight:700;  
-  width:100%;
-  height:30px;
-}
-.arrow
-{
-    width:30px;
-    height:30px;
-}
-div img
-{
-    width:100%;
-    height:100%;
-}
-

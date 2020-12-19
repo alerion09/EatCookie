@@ -9,28 +9,31 @@
 <body>
     <div id="container">
         <section id="points_time_div">
-            <div id="points"></div>
+            <span id="points" class="nes-text is-primary"></span>
             <div id="time_div">
-                <div id="extra_time"></div>
-                <div id="time"></div>
+                <span id="extra_time" class="nes-text is-success"></span>
+                <span id="time" class="nes-text is-primary"></span>
             </div>
         </section>
         <section id="stage">
-        <div id="area">
-            <div id="square"><img src="./img/postac.png" /></div>
-            <div id="artifact"><img src="./img/ciastko.png" /></div>
-        </div>
+            <div class="nes-container with-title is-centered">
+                <p class="title">Cookies Eater</p>
+                <div id="area">
+                    <div id="square"><img class="pixelate" src="./img/postac2.png" /></div>
+                    <div id="artifact"><img class="pixelate" src="./img/artefakt.png" /></div>
+                </div>
+            </div> 
         </section>
         <section id="control_buttons">
-            <div>
-                <input type="image" class="arrow" id="up" src="./img/strzalka_gora.png"></input>
+            <div class="flex_div">
+                <div class="arrow pixelate" id="up" ><img src="./img/arrow_up.png" alt=""></div>
             </div>
-            <div>
-                <input type="image" class="arrow" id="left" src="./img/strzalka_lewo.png"></input>
-                <input type="image" class="arrow" id="right" src="./img/strzalka_prawo.png"></input>
+            <div class="flex_div">
+                <div class="arrow pixelate" id="left"><img src="./img/arrow_left.png" alt=""></div>
+                <div class="arrow pixelate" id="right"><img src="./img/arrow_right.png" alt=""></div>
             </div>
-            <div>
-                <input type="image" class="arrow" id="down" src="./img/strzalka_dol.png"></input>
+            <div class="flex_div">
+                <div class="arrow pixelate" id="down"><img src="./img/arrow_down.png" alt=""></div>
             </div>
         </section>
     </div>

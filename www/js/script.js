@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", appStart)
 //ZMIENNE GLOBALNE
 var position_0 = 30;
@@ -13,7 +14,7 @@ var margin_left = 2;
 var artifact_margin_top = 3;
 var artifact_margin_left = 4;
 var refresh = setInterval(timer, 1000);
-var initial_time = 8;//ODLICZANIE CZASU
+var initial_time =8;//ODLICZANIE CZASU
 //-------------------------------------------
 //FUNKCJA STARTOWA ................................................................................
 function appStart()

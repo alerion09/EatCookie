@@ -1,0 +1,65 @@
+@import "../../node_modules/nes.css/css/nes.css";
+@font-face
+{
+    font-family: "PressStart2P-Regular";
+    src: url(../fonts/PressStart2P-Regular.ttf);
+}
+html
+{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62,5%;
+}
+body
+{
+    font-family: "PressStart2P-Regular";
+    font-size: 1.6rem;
+    height:100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color:rgb(0, 0, 0);
+}
+.container
+{   
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section
+{
+    display: flex;
+    width: 60%;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+}
+.div_nick
+{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-items: center;
+}
+#input_nick
+{
+    width: 80%;
+}
+.button_go
+{
+    width:20%
+}
+.score
+{
+    margin-top: 10%;
+}
+.button_highscores
+{
+    margin-top: 5%;
+}

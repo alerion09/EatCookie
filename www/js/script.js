@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", appStart)
 //ZMIENNE GLOBALNE
 var position_0 = 30;

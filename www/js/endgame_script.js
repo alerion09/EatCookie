@@ -23,11 +23,14 @@ function checkIfGetHighscore()
     const existHighscoresString = window.localStorage.getItem("highscores");
     const goButton = document.querySelector('.button_go');
     const inputNick = document.getElementById('input_nick');
+    const divContainer = document.querySelector('.container');
+    const sectionNick = document.querySelector('.section_nick');
     let numScore = parseInt(tempScore);
     if (numScore === 0)                                             //(A) If score equal '0' then disable button and input field
     {
         goButton.disabled = true;
         inputNick.disabled = true;
+        divContainer.removeChild(sectionNick);
     }
     else if (existHighscoresString == null && numScore !== 0)       //(A) If highscores don't exist and score not equal '0' and 
     {                                                               //when click 'Go' button then 
@@ -36,6 +39,7 @@ function checkIfGetHighscore()
             const player = new Score (inputNickValue, tempScore);   //Create new Score object 'player'
             player.createHighscores();                              //Use Score method to create highscores file
             player.pushScoreToHighScores(player);                   //Use Score method to throw current score in to highscores file
+            show_highscores();                   
         }, false);
     }
     else                                                                    //(A) If score is not equal 0 and highscores file already exist then
@@ -48,6 +52,7 @@ function checkIfGetHighscore()
             {                                                                // disable 'Go' button and input field
                 goButton.disabled = true;
                 inputNick.disabled = true;
+                divContainer.removeChild(sectionNick);
             }
             else                                                                //(C) If highscore has 10 records and current score is 
             {                                                                   // higher then lowest score then
@@ -56,7 +61,8 @@ function checkIfGetHighscore()
                     const player = new Score (inputNickValue, tempScore);                   //Create new Score object 'player'
                     player.pushScoreToHighScores(player);                                   //Use Score method to throw current score in to highscores file
                     player.sortHighScores();                                                //Use Score method to sort highscores file
-                    player.removeLastScore();                                               //Use Score method to remove highscores last record 
+                    player.removeLastScore();
+                    show_highscores();                                               //Use Score method to remove highscores last record 
                 },false);
             }
         }
@@ -66,7 +72,8 @@ function checkIfGetHighscore()
                 const inputNickValue = inputNick.value;                                         
                 const player = new Score (inputNickValue, tempScore);                           // create Score object 'player'
                 player.pushScoreToHighScores(player);                                           // use Score method to throw current score in to highscores file
-                player.sortHighScores();                                                        // use Score method to sort highscores
+                player.sortHighScores();
+                show_highscores();                                                        // use Score method to sort highscores
             }, false);
         }
     }

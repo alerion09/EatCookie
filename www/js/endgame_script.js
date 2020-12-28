@@ -26,13 +26,11 @@ function checkIfGetHighscore()
     let numScore = parseInt(tempScore);
     if (numScore === 0)                                             //(A) If score equal '0' then disable button and input field
     {
-        console.log("Wynik wynosi zero, dezaktywuj button");
         goButton.disabled = true;
         inputNick.disabled = true;
     }
     else if (existHighscoresString == null && numScore !== 0)       //(A) If highscores don't exist and score not equal '0' and 
     {                                                               //when click 'Go' button then 
-        console.log("Brak pliku highscores, aktywuj button");
         goButton.addEventListener('click', function(){
             const inputNickValue = inputNick.value;                 //Get input nick name
             const player = new Score (inputNickValue, tempScore);   //Create new Score object 'player'
@@ -48,13 +46,11 @@ function checkIfGetHighscore()
             let numLowestScore = parseInt(existHighscoresObject[9].score);
             if (numScore <= numLowestScore)                                  //(C) If current score is lower then lowest high score then
             {                                                                // disable 'Go' button and input field
-                console.log("Score jest za maly, dezaktywuj button");
                 goButton.disabled = true;
                 inputNick.disabled = true;
             }
             else                                                                //(C) If highscore has 10 records and current score is 
             {                                                                   // higher then lowest score then
-                console.log("Score znajduje sie w pierwszej 10 wynikow, aktywuj button");
                 goButton.addEventListener('click', function(){
                     const inputNickValue = inputNick.value;
                     const player = new Score (inputNickValue, tempScore);                   //Create new Score object 'player'
@@ -66,7 +62,6 @@ function checkIfGetHighscore()
         }
         else                                                                                    //(B) If highscore has less then 10 records and
         {                                                                                       // click 'Go' button then 
-            console.log("W pliku highscores jest mniej wynikow niz 10, aktywuj button");
             goButton.addEventListener('click', function(){
                 const inputNickValue = inputNick.value;                                         
                 const player = new Score (inputNickValue, tempScore);                           // create Score object 'player'
@@ -75,7 +70,6 @@ function checkIfGetHighscore()
             }, false);
         }
     }
-
 }
 class Score 
 {
@@ -89,7 +83,6 @@ class Score
         const highscoresArray = [];                                         
         const stringHighscoresArray = JSON.stringify(highscoresArray);      
         window.localStorage.setItem("highscores", stringHighscoresArray);
-        console.log(JSON.parse(window.localStorage.getItem("highscores")));
     }
     pushScoreToHighScores(obj)                                                              // Method - get 'highscores' and push current score to them
     {                                                                                       // then save 'highscores' to local storage
@@ -97,7 +90,6 @@ class Score
         objHighScores.push(obj);
         const stringHighScores = JSON.stringify(objHighScores);
         window.localStorage.setItem("highscores", stringHighScores);
-        console.log(JSON.parse(window.localStorage.getItem("highscores")));
     }
     sortHighScores()                                                                             // Method - get 'highscores' and sort, then save 
     {                                                                                            // 'highscores' to local storage
@@ -105,7 +97,6 @@ class Score
         const sortedHighScores = objHighScores.sort(function (a,b){return b.score - a.score;});
         const stringSortedHighScores = JSON.stringify(sortedHighScores);
         window.localStorage.setItem("highscores", stringSortedHighScores);
-        console.log(JSON.parse(window.localStorage.getItem("highscores")));
     }
     removeLastScore()                                                                               // Method - get 'highscores' and remove last score
     {                                                                                               // then save 'highscores' to local storage
@@ -113,6 +104,5 @@ class Score
         objHighScores.splice(10,1);
         const stringSplicedHighScores = JSON.stringify(objHighScores);
         window.localStorage.setItem("highscores", stringSplicedHighScores);
-        console.log(JSON.parse(window.localStorage.getItem("highscores")));
     }
 }

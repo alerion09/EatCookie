@@ -4,6 +4,7 @@
     font-family: "PressStart2P-Regular";
     src: url(../fonts/PressStart2P-Regular.ttf);
 }
+/* DEFAULT PROPERTIES ARE DISPLAYED CORRETLY FOR SCREEN SIZES WIDTH BETWEEN 320 AND 419 PIXELS */
 html
 {
     height:100%;
@@ -16,15 +17,13 @@ html
 body
 {   
     font-family: "PressStart2P-Regular";
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     height:100%;
     width: 100%;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     color:rgb(0, 0, 0);
-    /* background: url("../img/tlo.png") no-repeat center center fixed; */
-    /* background-size:cover; */
 }
 #container
 {
@@ -32,16 +31,6 @@ body
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-#points_time_div
-{   
-    font-size: 2rem;
-    height: 10%;
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
 }
 #time_div
@@ -53,6 +42,15 @@ body
 {
     padding-left: 10px;
 }
+#control_buttons
+{   
+    height: inherit;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 #stage
 {   
     display: flex;
@@ -60,23 +58,13 @@ body
     justify-content: flex-start;
     align-items: center;
 }
-#area
+#points_time_div
 {   
-    background-size:cover; 
-    border:thin;
-    width: 400px;
-    height: 400px;
-    border-style:none;
-    border-color:#a5a8c3;
-}
-#control_buttons
-{
-    margin-top: 2%;
-    width: 100%;
-    height: 25%;
+    height: 15%;
+    width: 95%;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
 }
 #up
@@ -85,15 +73,24 @@ body
 }
 #left
 {   
-    margin-right: 5px;
+    margin-right: 25px;
 }
 #right
 {   
-    margin-left: 5px;
+    margin-left: 25px;
 }
 #down 
 {   
     margin-top: 10px;
+}
+#area
+{   
+    background-size:cover; 
+    border:thin;
+    width: 300px;
+    height: 300px;
+    border-style:none;
+    border-color:#a5a8c3;
 }
 #square
 {
@@ -106,6 +103,9 @@ body
     width:30px;
     height:30px;
     position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #artifact img
 {
@@ -114,8 +114,8 @@ body
 }
 .arrow
 {
-    width:30px;
-    height:30px;
+    width:40px;
+    height:40px;
 }
 div img
 {
@@ -130,7 +130,7 @@ div img
 #ok_button
 {   
     font-family: 'arial black';
-    font-size: 1em;
+    font-size: 1rem;
     color: white;
     background-color: black;
     border: none;
@@ -146,4 +146,99 @@ div img
 .flex_div
 {
     display: flex;
+}
+.border_nes
+{
+    padding: 2px;
+}
+/*------------------ RESPONSIVE CSS -----------------*/
+@media only screen and (min-width: 420px) and (max-width: 519px)
+{
+    #area
+    {   
+        width: 400px;
+        height: 400px;
+    }
+    #square
+    {
+        width:40px;
+        height:40px;
+    }
+    #artifact
+    {
+        width:40px;
+        height:40px;
+    }
+}
+@media only screen and (min-width: 520px) and (max-width: 619px)
+{
+    #area
+    {   
+        width: 500px;
+        height: 500px;
+    }
+    #square
+    {
+        width:50px;
+        height:50px;
+    }
+    #artifact
+    {
+        width:50px;
+        height:50px;
+    }
+}
+@media only screen and (min-width: 620px) and (max-width: 719px)
+{
+    #area
+    {   
+        width: 600px;
+        height: 600px;
+    }
+    #square
+    {
+        width:60px;
+        height:60px;
+    }
+    #artifact
+    {
+        width:60px;
+        height:60px;
+    }
+}
+@media only screen and (min-width: 720px) and (max-width: 819px)
+{
+    #area
+    {   
+        width: 700px;
+        height: 700px;
+    }
+    #square
+    {
+        width:70px;
+        height:70px;
+    }
+    #artifact
+    {
+        width:70px;
+        height:70px;
+    }
+}
+@media only screen and (min-width: 820px) and (max-width: 919px)
+{
+    #area
+    {   
+        width: 800px;
+        height: 800px;
+    }
+    #square
+    {
+        width:80px;
+        height:80px;
+    }
+    #artifact
+    {
+        width:80px;
+        height:80px;
+    }
 }

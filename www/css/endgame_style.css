@@ -16,7 +16,7 @@ html
 body
 {
     font-family: "PressStart2P-Regular";
-    font-size: 1.6rem;
+    font-size: 2.6rem;
     height:100%;
     width: 100%;
     padding: 0;
@@ -38,19 +38,18 @@ section
     width: 60%;
     align-items: center;
     flex-direction: column;
-    margin-top: 10%;
+    margin-top: 20%;
 }
 .div_nick
 {
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 100%;
     align-items: center;
 }
 #input_nick
 {
     width: 80%;
-    height: 70%;
 }
 .button_go
 {
@@ -63,5 +62,5 @@ section
 }
 .button_highscores
 {
-    margin-top: 5%;
+    margin-top: 10%;
 }

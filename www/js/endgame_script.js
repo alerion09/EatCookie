@@ -1,7 +1,8 @@
 var tempScore = window.sessionStorage.getItem('tempScore'); //Get current score from session storage
 document.addEventListener("DOMContentLoaded", appStart)
 function appStart()
-{
+{   
+    screen.orientation.lock('portrait');
     const scoreInfo = document.querySelector('.score');
     const newGameButton = document.querySelector('.button_new_game');
     const highscoresButton = document.querySelector('.button_highscores');

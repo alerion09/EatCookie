@@ -33,7 +33,7 @@ body
 section
 {
     display: flex;
-    width: 60%;
+    width: 100%;
     align-items: center;
     flex-direction: column;
     margin-top: 20%;
@@ -44,10 +44,11 @@ section
     flex-direction: row;
     width: 100%;
     align-items: center;
+    justify-content: center;
 }
 #input_nick
 {
-    width: 80%;
+    width: 60%;
 }
 .button_go
 {

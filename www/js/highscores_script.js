@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", appStart)
 function appStart()
-{
+{   
+    screen.orientation.lock('portrait');
     const newGameButton = document.querySelector('.button_new_game');
     newGameButton.addEventListener('click', show_index, false);
     createHighScoresTable();

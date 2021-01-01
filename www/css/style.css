@@ -80,6 +80,11 @@ body
     width: 300px;
     height: 300px;
 }
+.border
+{
+    border: solid;
+    padding: 2px;
+}
 #square
 {
     width:30px;
@@ -134,11 +139,6 @@ div img
 .flex_div
 {
     display: flex;
-}
-#stage
-{
-    border: 3px solid black;
-    padding: 2px;
 }
 /*------------------ RESPONSIVE CSS -----------------*/
 @media only screen and (min-width: 420px)

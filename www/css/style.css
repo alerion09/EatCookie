@@ -1,5 +1,4 @@
-﻿@import "../../node_modules/nes.css/css/nes.css";
-@font-face
+﻿@font-face
 {
     font-family: "PressStart2P-Regular";
     src: url(../fonts/PressStart2P-Regular.ttf);
@@ -152,7 +151,7 @@ div img
     padding: 2px;
 }
 /*------------------ RESPONSIVE CSS -----------------*/
-@media only screen and (min-width: 420px) and (max-width: 519px)
+@media only screen and (min-width: 420px)
 {
     #area
     {   
@@ -169,8 +168,29 @@ div img
         width:40px;
         height:40px;
     }
+    .arrow
+    {
+        width:60px;
+        height:60px;
+    }
+    #up
+    { 
+        margin-bottom: 10px;
+    }
+    #left
+    {   
+        margin-right: 30px;
+    }
+    #right
+    {   
+        margin-left: 30px;
+    }
+    #down 
+    {   
+        margin-top: 10px;
+    }
 }
-@media only screen and (min-width: 520px) and (max-width: 619px)
+@media only screen and (min-width: 520px)
 {
     #area
     {   
@@ -188,7 +208,7 @@ div img
         height:50px;
     }
 }
-@media only screen and (min-width: 620px) and (max-width: 719px)
+@media only screen and (min-width: 620px) 
 {
     #area
     {   
@@ -206,7 +226,7 @@ div img
         height:60px;
     }
 }
-@media only screen and (min-width: 720px) and (max-width: 819px)
+@media only screen and (min-width: 720px)
 {
     #area
     {   

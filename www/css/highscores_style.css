@@ -15,7 +15,6 @@ html
 body
 {   
     font-family: "PressStart2P-Regular";
-    font-size: 3rem;
 }
 section
 {
@@ -23,8 +22,4 @@ section
     flex-direction: column;
     align-items: center;
     margin-top: 20%;
-}
-.table_nes
-{
-    font-size: 2rem;
 }

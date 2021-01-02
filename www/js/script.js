@@ -13,7 +13,7 @@ let margin_left;
 let artifact_margin_top;
 let artifact_margin_left;
 let refresh = setInterval(timer, 1000);
-let initial_time = 6;
+let initial_time = 60;
 //-------------------------
 function appStart()             //FIRST FUNCTION STARTING AFTER DOM LOADING
 {
@@ -33,6 +33,34 @@ function appStart()             //FIRST FUNCTION STARTING AFTER DOM LOADING
     const areaWidth = area.clientWidth;
     countPosition(areaWidth);
     move_artifact();
+    // const loot1 = new Loot (move, move, 30, 30, 5);
+    // console.log(loot1);
+    // loot1.createDiv('area', 'loot1');
+}
+class Loot
+{
+    constructor(width, height, left_position, top_position, value)
+    {
+        this.width = width;
+        this.height = height;
+        this.left_position = left_position;
+        this.top_position = top_position;
+        this.value = value;
+    }
+    createDiv(parent_id, div_id) //CREATE DIV ELEMENT, first arg is parent id and second arg is id of new div
+    {
+        let div = document.createElement('DIV');
+        div.id = div_id;
+        div.style.width = `${this.width}px`;
+        div.style.height = `${this.height}px`;
+        div.style.marginLeft = `${this.left_position}px`;
+        div.style.marginTop = `${this.top_position}px`;
+        div.className = 'loot';
+        div.style.position = 'absolute';
+        div.style.backgroundColor = "black";
+        let parent = document.getElementById(parent_id);
+        parent.appendChild(div);
+    }
 }
 function countPosition(width) // FUNCTION RESPONSIBLE FOR COUNT VALUE FOR GLOBAL VARIABLES
 {

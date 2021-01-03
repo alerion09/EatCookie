@@ -33,21 +33,22 @@ function appStart()             //FIRST FUNCTION STARTING AFTER DOM LOADING
     const areaWidth = area.clientWidth;
     countPosition(areaWidth);
     move_artifact();
-    // const loot1 = new Loot (move, move, 30, 30, 5);
+    // const character1 = new Character (move, move, 0, 0);
+    // character1.createDiv('area', 'character1', 'char');
+    // const loot1 = new Loot (move, move, 60, 60, 5, 1);
     // console.log(loot1);
-    // loot1.createDiv('area', 'loot1');
+    // loot1.createDiv('area', 'loot1', 'loot');
 }
-class Loot
+class Character
 {
-    constructor(width, height, left_position, top_position, value)
+    constructor(width, height, left_position, top_position)
     {
         this.width = width;
         this.height = height;
         this.left_position = left_position;
         this.top_position = top_position;
-        this.value = value;
     }
-    createDiv(parent_id, div_id) //CREATE DIV ELEMENT, first arg is parent id and second arg is id of new div
+    createDiv(parent_id, div_id, div_class) //CREATE DIV ELEMENT, first arg is parent id and second arg is id of new div
     {
         let div = document.createElement('DIV');
         div.id = div_id;
@@ -55,12 +56,21 @@ class Loot
         div.style.height = `${this.height}px`;
         div.style.marginLeft = `${this.left_position}px`;
         div.style.marginTop = `${this.top_position}px`;
-        div.className = 'loot';
+        div.className = div_class;
         div.style.position = 'absolute';
         div.style.backgroundColor = "black";
         let parent = document.getElementById(parent_id);
         parent.appendChild(div);
     }
+}
+class Loot extends Character
+{
+    constructor(width, height, left_position, top_position, value, time)
+    {
+       super(width, height, left_position, top_position);
+       this.value = value;
+       this.time = time;
+    }   
 }
 function countPosition(width) // FUNCTION RESPONSIBLE FOR COUNT VALUE FOR GLOBAL VARIABLES
 {

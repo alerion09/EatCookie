@@ -1,19 +1,11 @@
 document.addEventListener('DOMContentLoaded', appStart)
 //------GLOBAL VARIABLES----
-let position_0;
-let position_1;
-let position_0_left;
-let position_1_left;
 let max_size;
 let move;
 let extra_time = 0;
 let points_scored = 0;
-let margin_top;
-let margin_left;
-let artifact_margin_top;
-let artifact_margin_left;
 let refresh = setInterval(timer, 1000);
-let initial_time = 60;
+let initial_time = 5;
 //-------------------------
 function appStart()             //FIRST FUNCTION STARTING AFTER DOM LOADING
 {
@@ -25,28 +17,92 @@ function appStart()             //FIRST FUNCTION STARTING AFTER DOM LOADING
     const right = document.getElementById('right');
     right.addEventListener('click', tap_right, false);
     const left = document.getElementById('left');
-    left.addEventListener('click', tap_left, false);
-    const square = document.getElementById('square');     
+    left.addEventListener('click', tap_left, false);  
     const points = document.getElementById('points');     
     points.innerHTML = 'Score: ' + points_scored;
     const area = document.getElementById('area');
     const areaWidth = area.clientWidth;
+
     countPosition(areaWidth);
-    move_artifact();
-    // const character1 = new Character (move, move, 0, 0);
-    // character1.createDiv('area', 'character1', 'char');
-    // const loot1 = new Loot (move, move, 60, 60, 5, 1);
-    // console.log(loot1);
-    // loot1.createDiv('area', 'loot1', 'loot');
+    const character1 = new Character (move, move, 0, 0, 'img/postac2.png');
+    character1.createDiv('area', 'char1', 'char');
+    console.log(character1);
+    const loot1 = new Loot (move, move, 0, 0, 'img/artefakt.png', 5, 2);
+    loot1.generateRandomPosition();
+    loot1.createDiv('area', 'lt1', 'loot');
+    
+    function tap_down() 
+    {
+        if (character1.top_position < max_size - move)
+        {   
+        
+            character1.removeDiv('char1');
+            character1.top_position = character1.top_position + move;
+            character1.createDiv('area', 'char1', 'char');
+            makeCollision();
+        } 
+    }
+    function tap_up()
+    {
+        if (character1.top_position >= move)
+        {   
+            character1.removeDiv('char1');
+            character1.top_position = character1.top_position - move;
+            character1.createDiv('area', 'char1', 'char');
+            makeCollision();
+        }  
+    }
+    function tap_right()
+    {
+        if (character1.left_position < max_size - move)
+        {   
+            character1.removeDiv('char1');
+            character1.left_position = character1.left_position + move;
+            character1.createDiv('area', 'char1', 'char');
+            makeCollision();
+        }    
+    }
+    function tap_left()
+    {
+        if (character1.left_position >= move)
+        {   
+            character1.removeDiv('char1');
+            character1.left_position = character1.left_position - move;
+            character1.createDiv('area', 'char1', 'char');
+            makeCollision();
+        }    
+    }
+    function makeCollision()
+    {
+        if (character1.top_position === loot1.top_position && character1.left_position === loot1.left_position)
+        {   
+            const extra_time_div = document.getElementById('extra_time');
+            loot1.removeDiv('lt1');
+            points_scored = points_scored + loot1.value;
+            extra_time = extra_time + loot1.time;
+            extra_time_div.innerHTML = `+${loot1.time} sec`;
+            setTimeout(function () {
+                extra_time_div.innerHTML = '';
+            }, 1500);
+            loot1.generateRandomPosition();
+            while (character1.top_position === loot1.top_position && character1.left_position === loot1.left_position) 
+            {
+                loot1.generateRandomPosition();
+            }
+            loot1.createDiv('area', 'lt1', 'loot', 'black');
+        }
+        points.innerHTML = 'Score: ' + points_scored;
+    }
 }
 class Character
 {
-    constructor(width, height, left_position, top_position)
+    constructor(width, height, left_position, top_position, image_url)
     {
         this.width = width;
         this.height = height;
         this.left_position = left_position;
         this.top_position = top_position;
+        this.image_url = image_url;
     }
     createDiv(parent_id, div_id, div_class) //CREATE DIV ELEMENT, first arg is parent id and second arg is id of new div
     {
@@ -58,16 +114,31 @@ class Character
         div.style.marginTop = `${this.top_position}px`;
         div.className = div_class;
         div.style.position = 'absolute';
-        div.style.backgroundColor = "black";
+        div.style.backgroundImage = `url(${this.image_url})`;
+        div.style.imageRendering = 'pixelated';
+        div.style.backgroundRepeat = 'no-repeat';
+        div.style.backgroundSize = '100%';
         let parent = document.getElementById(parent_id);
         parent.appendChild(div);
+    }
+    removeDiv(div_id)
+    {
+        let div = document.getElementById(div_id);
+        div.remove();
+    }
+    generateRandomPosition()
+    {
+        let random1 = (Math.floor((Math.random()*9 + 1)) * this.width);
+        let random2 = (Math.floor((Math.random()*9 + 1)) * this.width);
+        this.top_position = random1;
+        this.left_position = random2;
     }
 }
 class Loot extends Character
 {
-    constructor(width, height, left_position, top_position, value, time)
+    constructor(width, height, left_position, top_position, image_url, value, time)
     {
-       super(width, height, left_position, top_position);
+       super(width, height, left_position, top_position, image_url);
        this.value = value;
        this.time = time;
     }   
@@ -92,90 +163,6 @@ function timer()    //FUNCTION COUNTDOWN TO END GAME
         show_endgame();
     }
     document.getElementById('time').innerHTML = 'Time: ' + initial_time;   
-}
-//--------------CONTROLS FUNCTIONS-----------------------------
-function tap_down() 
-{
-    if (position_0 < max_size)
-    {
-        console.log(position_0);
-        square.style.marginTop = position_0 + 'px';
-        position_0 = position_0 + move;
-        control_joint();
-    } 
-    console.log(position_0);
-}
-function tap_up()
-{
-    if (position_0 > move)
-    {
-        square.style.marginTop = position_0 + position_1 + 'px';
-        position_0 = position_0 - move;
-        control_joint();
-    }  
-}
-function tap_right()
-{
-    if (position_0_left < max_size)
-    {
-        square.style.marginLeft = position_0_left + "px";
-        position_0_left = position_0_left + move;
-        control_joint();
-    }    
-}
-function tap_left()
-{
-    if (position_0_left > move)
-    {
-        square.style.marginLeft = position_0_left + position_1_left + 'px';
-        position_0_left = position_0_left - move;
-        control_joint();
-    }    
-}
-function control_joint()
-{
-    margin_top = (position_0 - move);
-    margin_left = (position_0_left - move);
-    if (artifact_margin_top === margin_top && artifact_margin_left === margin_left)
-    {
-        points_scored = points_scored + 5;
-        extra_time = extra_time + 2;
-        document.getElementById('extra_time').innerHTML = '+2 sec';
-        setTimeout(function () {
-            document.getElementById('extra_time').innerHTML = '';
-        }, 1500);
-        let random1 = Math.floor((Math.random() * 9) + 1);
-        let random2 = Math.floor((Math.random() * 9) + 1);
-        console.log('random1: ' + random1);
-        console.log('random2: ' + random2);
-        artifact_margin_left = random1 * move;
-        artifact_margin_top = random2 * move;
-        if (artifact_margin_top === margin_top && artifact_margin_left === margin_left)
-        {
-            artifact_margin_left = random1 * move;
-            artifact_margin_top = random2 * move;
-        } else
-
-        artifact.style.marginLeft = (artifact_margin_left) + 'px';
-        artifact.style.marginTop = (artifact_margin_top) + 'px';
-    }
-    points.innerHTML = 'Score: ' + points_scored;
-}
-//-----------------------------------------------------------
-function move_artifact()                //FUNCTION RESPONSIBLE FOR CHANGE ARTIFACT POSITION
-{   
-    const artifact = document.getElementById('artifact'); 
-    artifact.style.height = move + 'px';
-    artifact.style.width = move + 'px';
-    artifact_margin_top = (Math.floor((Math.random() * 9) + 1))* move;
-    artifact_margin_left = (Math.floor((Math.random() * 9) + 1)) * move;
-    
-    if (artifact_margin_top === margin_top && artifact_margin_left === margin_left)
-    {
-        move_artifact();
-    } else
-    artifact.style.marginLeft = artifact_margin_left + 'px';
-    artifact.style.marginTop = artifact_margin_top + 'px';
 }
 function show_index()           //Open Main View 
 {

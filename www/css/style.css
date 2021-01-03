@@ -91,20 +91,6 @@ body
     height:30px;
     position:absolute;
 }
-#artifact
-{
-    width:30px;
-    height:30px;
-    position:absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#artifact img
-{
-    width:80%;
-    height:80%;
-}
 .arrow
 {
     width:40px;

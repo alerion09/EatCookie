@@ -110,11 +110,6 @@ class Character
         div.style.marginLeft = `${this.left_position}px`;
         div.style.marginTop = `${this.top_position}px`;
         div.className = div_class;
-        //div.style.position = 'absolute';
-        // div.style.backgroundImage = `url(${this.image_url})`;
-        // div.style.imageRendering = 'pixelated';
-       // div.style.backgroundRepeat = 'no-repeat';
-       // div.style.backgroundSize = '100%';
         let parent = document.getElementById(parent_id);
         parent.appendChild(div);
     }

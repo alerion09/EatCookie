@@ -120,7 +120,7 @@ div img
 }
 .pixelate
 {
-    image-rendering: pixelated;
+    /* image-rendering: pixelated; */
 }
 .flex_div
 {

@@ -9,7 +9,6 @@ let initial_time = 5;
 //-------------------------
 function appStart()             //FIRST FUNCTION STARTING AFTER DOM LOADING
 {
-    // screen.orientation.lock('portrait'); 
     const down = document.getElementById('down');
     down.addEventListener('click', tap_down, false);
     const up = document.getElementById('up');

@@ -121,6 +121,7 @@ div img
 }
 .pixelate
 {
+    image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
 }
 .flex_div
@@ -133,6 +134,7 @@ div img
     background-repeat: no-repeat;
     background-size: 100%;
     background-image: url(../img/postac2.png);
+    image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
 }
 .loot
@@ -141,6 +143,7 @@ div img
     background-repeat: no-repeat;
     background-size: 100%;
     background-image: url(../img/artefakt.png);
+    image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
 }
 /*------------------ RESPONSIVE CSS -----------------*/

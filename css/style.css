@@ -127,6 +127,20 @@ div img
 {
     display: flex;
 }
+.char
+{
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url(../img/postac2.png);
+}
+.loot
+{
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url(../img/artefakt.png);
+}
 /*------------------ RESPONSIVE CSS -----------------*/
 @media only screen and (min-width: 420px)
 {

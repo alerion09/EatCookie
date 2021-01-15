@@ -23,10 +23,10 @@ function appStart()             //FIRST FUNCTION STARTING AFTER DOM LOADING
     const areaWidth = area.clientWidth;
 
     countPosition(areaWidth);
-    const character1 = new Character (move, move, 0, 0, 'img/postac2.png');
+    const character1 = new Character (move, move, 0, 0);
     character1.createDiv('area', 'char1', 'char');
     console.log(character1);
-    const loot1 = new Loot (move, move, 0, 0, 'img/artefakt.png', 5, 2);
+    const loot1 = new Loot (move, move, 0, 0, 5, 2);
     loot1.generateRandomPosition();
     loot1.createDiv('area', 'lt1', 'loot');
     
@@ -34,7 +34,6 @@ function appStart()             //FIRST FUNCTION STARTING AFTER DOM LOADING
     {
         if (character1.top_position < max_size - move)
         {   
-        
             character1.removeDiv('char1');
             character1.top_position = character1.top_position + move;
             character1.createDiv('area', 'char1', 'char');
@@ -88,20 +87,19 @@ function appStart()             //FIRST FUNCTION STARTING AFTER DOM LOADING
             {
                 loot1.generateRandomPosition();
             }
-            loot1.createDiv('area', 'lt1', 'loot', 'black');
+            loot1.createDiv('area', 'lt1', 'loot');
         }
         points.innerHTML = 'Score: ' + points_scored;
     }
 }
 class Character
 {
-    constructor(width, height, left_position, top_position, image_url)
+    constructor(width, height, left_position, top_position)
     {
         this.width = width;
         this.height = height;
         this.left_position = left_position;
         this.top_position = top_position;
-        this.image_url = image_url;
     }
     createDiv(parent_id, div_id, div_class) //CREATE DIV ELEMENT, first arg is parent id and second arg is id of new div
     {
@@ -112,11 +110,11 @@ class Character
         div.style.marginLeft = `${this.left_position}px`;
         div.style.marginTop = `${this.top_position}px`;
         div.className = div_class;
-        div.style.position = 'absolute';
-        div.style.backgroundImage = `url(${this.image_url})`;
+        //div.style.position = 'absolute';
+        // div.style.backgroundImage = `url(${this.image_url})`;
         // div.style.imageRendering = 'pixelated';
-        div.style.backgroundRepeat = 'no-repeat';
-        div.style.backgroundSize = '100%';
+       // div.style.backgroundRepeat = 'no-repeat';
+       // div.style.backgroundSize = '100%';
         let parent = document.getElementById(parent_id);
         parent.appendChild(div);
     }
@@ -135,9 +133,9 @@ class Character
 }
 class Loot extends Character
 {
-    constructor(width, height, left_position, top_position, image_url, value, time)
+    constructor(width, height, left_position, top_position, value, time)
     {
-       super(width, height, left_position, top_position, image_url);
+       super(width, height, left_position, top_position);
        this.value = value;
        this.time = time;
     }   

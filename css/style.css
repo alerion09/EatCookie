@@ -17,7 +17,7 @@ html
 body
 {   
     font-family: "PressStart2P-Regular";
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     height:100%;
     width: 100%;
     padding: 0;
@@ -157,6 +157,10 @@ div img
 /*------------------ RESPONSIVE CSS -----------------*/
 @media only screen and (min-width: 420px)
 {
+    body
+    {
+        font-size: 1.4rem;
+    }
     #area
     {   
         width: 400px;
@@ -177,10 +181,6 @@ div img
         width:60px;
         height:60px;
     }
-    #up
-    { 
-        margin-bottom: 10px;
-    }
     #left
     {   
         margin-right: 30px;
@@ -189,13 +189,13 @@ div img
     {   
         margin-left: 30px;
     }
-    #down 
-    {   
-        margin-top: 10px;
-    }
 }
 @media only screen and (min-width: 520px)
 {
+    body
+    {
+        font-size: 1.6rem;
+    }
     #area
     {   
         width: 500px;
@@ -213,7 +213,11 @@ div img
     }
 }
 @media only screen and (min-width: 620px) 
-{
+{   
+    body
+    {
+        font-size: 1.8rem;
+    }
     #area
     {   
         width: 600px;
@@ -232,6 +236,23 @@ div img
 }
 @media only screen and (min-width: 720px)
 {
+    body
+    {
+        font-size: 2rem;
+    }
+    .arrow
+    {
+        width:80px;
+        height:80px;
+    }
+    #left
+    {   
+        margin-right: 35px;
+    }
+    #right
+    {   
+        margin-left: 35px;
+    }
     #area
     {   
         width: 700px;
@@ -249,7 +270,11 @@ div img
     }
 }
 @media only screen and (min-width: 820px) and (max-width: 919px)
-{
+{   
+    body
+    {
+        font-size: 2.2rem;
+    }
     #area
     {   
         width: 800px;

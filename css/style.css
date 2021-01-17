@@ -46,21 +46,29 @@ body
 }
 #time
 {
-    padding-left: 10px;
+    padding-left: 5px;
+}
+.stage_buttons
+{
+    display: flex;
+    flex-direction: column;
+    height: 90%;
 }
 #control_buttons
 {   
-    height: inherit;
     width: 100%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    align-self: center;
 }
 #points_time_div
 {   
-    height: 15%;
-    width: 95%;
+    height: 50px;
+    width: 100%;
+    padding: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -93,6 +101,8 @@ body
 {
     border: solid;
     padding: 2px;
+    width: fit-content;
+    height: fit-content;
 }
 #square
 {
@@ -271,34 +281,49 @@ div img
 }
 @media only screen and (min-width: 1024px) and (min-height: 700px)
 {   
-    
-    #container
-    {   
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    section
+    .stage_buttons
     {
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+        align-items: center;
+        width: 90%;
     }
     #points_time_div
     {
         width: 100%;
         height: 80px;
-        padding: 0 20px 0 20px;
-        align-self: flex-start;
+        padding: 0 40px 0 40px;
+    }
+    #stage
+    {
+        width: 70%;
+        display: flex;
+        justify-content: center;
     }
     #area
     {   
         width: 600px;
         height: 600px;
-        align-self: flex-start;
     }
     #control_buttons
     {
-        width: 30%;
-        height: 50%;
-        align-self: center;
-        padding-left: 30px;
-    } 
+        width: 250px;
+    }
+    #time
+{
+    padding-left: 30px;
 }
+}
+@media only screen and (min-width: 1500px) and (min-height: 700px)
+{   
+    body
+    {
+        font-size: 2.2rem;
+    }
+    #area
+    {   
+        width: 700px;
+        height: 700px;
+    }
+} 

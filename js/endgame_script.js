@@ -19,18 +19,19 @@ function show_highscores()
     window.location.href = 'highscores.html';
 }
 function checkIfGetHighscore()
-{
+{   
+    
     const existHighscoresString = window.localStorage.getItem("highscores");
     const goButton = document.querySelector('.button_go');
     const inputNick = document.getElementById('input_nick');
-    const divContainer = document.querySelector('.container');
+    const divContent = document.querySelector('.content');
     const sectionNick = document.querySelector('.section_nick');
     let numScore = parseInt(tempScore);
     if (numScore === 0)                                             //(A) If score equal '0' then disable button and input field
     {
         goButton.disabled = true;
         inputNick.disabled = true;
-        divContainer.removeChild(sectionNick);
+        divContent.removeChild(sectionNick);
     }
     else if (existHighscoresString == null && numScore !== 0)       //(A) If highscores don't exist and score not equal '0' and 
     {                                                               //when click 'Go' button then 

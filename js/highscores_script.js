@@ -13,9 +13,18 @@ function createHighScoresTable()
 {
     const highScoresTbody = document.querySelector('.highScores_tbody');
     const objHighScores = JSON.parse(window.localStorage.getItem('highscores'));
+    const tableNes = document.querySelector('.table_nes');
     let i;
-    for (i = 0; objHighScores.length != i; i++)
+    if (objHighScores != null)
     {
-        highScoresTbody.innerHTML+= `<tr><td>${objHighScores[i].nick}</td><td>${objHighScores[i].score}</td></tr>`;
+        for (i = 0; objHighScores.length != i; i++)
+        {
+            highScoresTbody.innerHTML+= `<tr><td>${objHighScores[i].nick}</td><td>${objHighScores[i].score}</td></tr>`;
+        }
     }
+    else
+    {
+        tableNes.innerHTML = "NO ANY HIGHSCORE..";
+    }
+    
 }

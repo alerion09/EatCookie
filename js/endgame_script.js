@@ -20,7 +20,6 @@ function show_highscores()
 }
 function checkIfGetHighscore()
 {   
-    
     const existHighscoresString = window.localStorage.getItem("highscores");
     const goButton = document.querySelector('.button_go');
     const inputNick = document.getElementById('input_nick');

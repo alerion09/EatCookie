@@ -281,6 +281,19 @@ div img
 }
 @media only screen and (min-width: 1024px) and (min-height: 700px)
 {   
+    .arrow
+    {
+        width:60px;
+        height:60px;
+    }
+    #left
+    {   
+        margin-right: 30px;
+    }
+    #right
+    {   
+        margin-left: 30px;
+    }
     .stage_buttons
     {
         display: flex;
@@ -315,7 +328,7 @@ div img
     padding-left: 30px;
 }
 }
-@media only screen and (min-width: 1500px) and (min-height: 700px)
+@media only screen and (min-width: 1500px) and (min-height: 800px)
 {   
     body
     {

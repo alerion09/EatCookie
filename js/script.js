@@ -5,7 +5,7 @@ let move;
 let extra_time = 0;
 let points_scored = 0;
 let refresh = setInterval(timer, 1000);
-let initial_time = 5;
+let initial_time = 100;
 //-------------------------
 function appStart()             //FIRST FUNCTION STARTING AFTER DOM LOADING
 {
@@ -22,6 +22,8 @@ function appStart()             //FIRST FUNCTION STARTING AFTER DOM LOADING
     const area = document.getElementById('area');
     const areaWidth = area.clientWidth;
 
+    console.log(window.innerWidth)
+    console.log(window.innerHeight)
     countPosition(areaWidth);
     const character1 = new Character (move, move, 0, 0);
     character1.createDiv('area', 'char1', 'char');

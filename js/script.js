@@ -5,7 +5,7 @@ let move;
 let extra_time = 0;
 let points_scored = 0;
 let refresh = setInterval(timer, 1000);
-let initial_time = 100;
+let initial_time = 6;
 //-------------------------
 function appStart()             //FIRST FUNCTION STARTING AFTER DOM LOADING
 {

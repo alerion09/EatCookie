@@ -1,4 +1,4 @@
-# EatCookie
+# Cookies Eater
 Simply mobile game stylized as 8 bit old games. 
 <br /> 
 Used technology: HTML5, CSS3, JavaScript, NES-style CSS Framework.

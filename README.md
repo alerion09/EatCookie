@@ -1,3 +1,4 @@
+> Early-stage project created before my commercial experience.
 # Cookies Eater
 Simply mobile game stylized as 8 bit old games. 
 <br /> 
